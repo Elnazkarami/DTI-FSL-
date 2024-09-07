@@ -1,0 +1,6 @@
+# Step 8: Run probabilistic tractography
+probtrackx2 -x trigeminal_seed_mask_bin.nii.gz -l --onewaycondition --omatrix1 \
+--targetmasks=target_masks_list.txt --os2t --s2tastext --avoid=exclusion_mask.nii.gz \
+--dir=tractography_output --forcedir --opd --samples=bedpostx_data.bedpostX/merged \
+--mask=bedpostx_data.bedpostX/nodif_brain_mask --xfm=bedpostx_data.bedpostX/xfm \
+--invxfm=bedpostx_data.bedpostX/inverse_xfm
