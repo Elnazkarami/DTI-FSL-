@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Run bedpostx for DTI analysis
+bedpostx <input_data_directory>
+
+# Perform probabilistic tractography
+probtrackx2 --samples=<input_data_directory>/bedpost.bedpostX/merged \
+--mask=<input_data_directory>/nodif_brain_mask \
+--seed=<input_data_directory>/seed_mask \
+--xfm=<input_data_directory>/xfm \
+--dir=<output_directory> --targetmasks=<target_masks>
+
+# Fit tensor model and extract metrics
+dtifit -k <input_data_directory>/data \
+-o <output_directory>/dti \
+-m <input_data_directory>/nodif_brain_mask \
+-r <input_data_directory>/bvecs -b <input_data_directory>/bvals
