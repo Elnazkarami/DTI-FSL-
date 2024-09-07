@@ -1,0 +1,9 @@
+# Step 1: Extract the b0 image and perform brain extraction
+fslroi dwi_data.nii.gz nodif 0 1
+bet nodif nodif_brain -m -f 0.3
+
+# Step 2: Correct for eddy currents and motion
+eddy_correct dwi_data.nii.gz dwi_data_ec 0
+
+# Step 3: Create a brain mask
+bet dwi_data_ec.nii.gz dwi_data_ec_brain -m
