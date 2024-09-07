@@ -1,0 +1,9 @@
+# Step 5: Set up the bedpostx directory
+mkdir bedpostx_data
+cp dwi_data_ec.nii.gz bedpostx_data/data.nii.gz
+cp bvals bedpostx_data/bvals
+cp bvecs bedpostx_data/bvecs
+cp dwi_data_ec_brain_mask.nii.gz bedpostx_data/nodif_brain_mask.nii.gz
+
+# Step 6: Run bedpostx
+bedpostx bedpostx_data
