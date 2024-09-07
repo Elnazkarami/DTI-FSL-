@@ -1,0 +1,2 @@
+# Step 4: Fit the tensor model
+dtifit -k dwi_data_ec_brain.nii.gz -o dti -m dwi_data_ec_brain_mask.nii.gz -r bvecs -b bvals
