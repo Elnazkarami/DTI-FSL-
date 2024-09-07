@@ -1,0 +1,3 @@
+# Step 7: Create a seed mask for the trigeminal nerve
+# Use FSLView or FSLeyes to draw the seed mask on the b0 or anatomical image
+fslmaths trigeminal_seed_mask.nii.gz -bin trigeminal_seed_mask_bin.nii.gz
